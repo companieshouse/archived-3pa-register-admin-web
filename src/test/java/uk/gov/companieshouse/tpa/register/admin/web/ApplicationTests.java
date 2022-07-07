@@ -1,4 +1,4 @@
-package uk.gov.companieshouse.paregisteradminweb;
+package uk.gov.companieshouse.tpa.register.admin.web;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

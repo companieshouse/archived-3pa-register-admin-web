@@ -2,4 +2,4 @@ app_name: 3pa-register-admin-web
 group: web
 weight: 900
 routes:
-  1: ^/admin/register-a-3pa/*
+  1: ^/third-party-agencies.*
