@@ -28,7 +28,6 @@ public class TpaDetailsControllerImpl implements TpaDetailsController {
         return ViewConstants.NEW.asView();
     }
 
-
     @Override
     @ModelAttribute(ATTRIBUTE_NAME)
     public TpaDetails getTpaDetailsAttribute() {

@@ -23,8 +23,7 @@
                         <div class="govuk-form-group" th:classappend="${#fields.hasErrors('agentName')}
                         ? 'govuk-form-group--error' : ''">
                             <label class="govuk-label" for="agent-name">
-                                <span class="govuk-visually-hidden"
-                                      th:text="|#{newAgent.agentName}|"></span>
+                                <span th:text="|#{newAgent.agentName}|"></span>
                             </label>
                             <span id="agentName-error" class="govuk-error-message"
                                   th:if="${#fields.hasErrors('agentName')}"
@@ -37,8 +36,7 @@
                         <div class="govuk-form-group" th:classappend="${#fields.hasErrors('contactName')}
                         ? 'govuk-form-group--error' : ''">
                             <label class="govuk-label" for="contact-name">
-                                <span class="govuk-visually-hidden"
-                                      th:text="|#{newAgent.contactName}|"></span>
+                                <span th:text="|#{newAgent.contactName}|"></span>
                             </label>
                             <span id="contactName-error" class="govuk-error-message"
                                   th:if="${#fields.hasErrors('contactName')}"
@@ -51,8 +49,7 @@
                         <div class="govuk-form-group" th:classappend="${#fields.hasErrors('email')}
                         ? 'govuk-form-group--error' : ''">
                             <label class="govuk-label" for="email">
-                                <span class="govuk-visually-hidden"
-                                      th:text="|#{newAgent.email}|"></span>
+                                <span th:text="|#{newAgent.email}|"></span>
                             </label>
                             <span id="email-error" class="govuk-error-message"
                                   th:if="${#fields.hasErrors('email')}"
@@ -62,115 +59,11 @@
                                    name="email" type="text" maxlength="50"
                                    th:field="*{email}">
                         </div>
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                <h3 class="govuk-fieldset__heading"
-                                    th:text="#{newAgent.address.title}"></h3>
-                            </legend>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.premise')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="premise">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.premise}|"></span>
-                                </label>
-                                <span id="premise-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.premise')}"
-                                      th:each="e: ${#fields.errors('address.premise')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="premise"
-                                       name="premise" type="text" maxlength="50"
-                                       th:field="*{address.premise}">
-                            </div>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.addressLine1')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="line1">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.line1}|"></span>
-                                </label>
-                                <span id="line1-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.addressLine1')}"
-                                      th:each="e: ${#fields.errors('address.addressLine1')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="line1"
-                                       name="line1" type="text" maxlength="50"
-                                       th:field="*{address.addressLine1}">
-                            </div>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.addressLine2')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="line2">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.line2}|"></span>
-                                </label>
-                                <span id="line2-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.addressLine2')}"
-                                      th:each="e: ${#fields.errors('address.addressLine2')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="line2"
-                                       name="line2" type="text" maxlength="50"
-                                       th:field="*{address.addressLine2}">
-                            </div>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.town')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="town">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.town}|"></span>
-                                </label>
-                                <span id="town-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.town')}"
-                                      th:each="e: ${#fields.errors('address.town')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="town"
-                                       name="town" type="text" maxlength="50"
-                                       th:field="*{address.town}">
-                            </div>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.county')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="county">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.county}|"></span>
-                                </label>
-                                <span id="county-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.county')}"
-                                      th:each="e: ${#fields.errors('address.county')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="county"
-                                       name="county" type="text" maxlength="50"
-                                       th:field="*{address.county}">
-                            </div>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.country')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="country">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.country}|"></span>
-                                </label>
-                                <span id="country-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.country')}"
-                                      th:each="e: ${#fields.errors('address.country')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="country"
-                                       name="country" type="text" maxlength="50"
-                                       th:field="*{address.country}">
-                            </div>
-                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.postcode')}
-                        ? 'govuk-form-group--error' : ''">
-                                <label class="govuk-label" for="postcode">
-                                    <span class="govuk-visually-hidden"
-                                          th:text="|#{newAgent.address.postcode}|"></span>
-                                </label>
-                                <span id="postcode-error" class="govuk-error-message"
-                                      th:if="${#fields.hasErrors('address.postcode')}"
-                                      th:each="e: ${#fields.errors('address.postcode')}"
-                                      th:text="${e}"></span>
-                                <input class="govuk-input" id="postcode"
-                                       name="postcode" type="text" maxlength="50"
-                                       th:field="*{address.postcode}">
-                            </div>
-                        </fieldset>
                         <div class="govuk-form-group" th:classappend="${#fields.hasErrors('supervisoryBody')}
                         ? 'govuk-form-group--error' : ''">
                             <label class="govuk-label" for="supervisoryBody">
-                                <span class="govuk-visually-hidden"
-                                      th:text="|#{newAgent.supervisoryBody}|"></span>
+                                <span
+                                        th:text="|#{newAgent.supervisoryBody}|"></span>
                             </label>
                             <span id="supervisoryBody-error" class="govuk-error-message"
                                   th:if="${#fields.hasErrors('supervisoryBody')}"
@@ -183,8 +76,8 @@
                         <div class="govuk-form-group" th:classappend="${#fields.hasErrors('amlRegistrationNumber')}
                         ? 'govuk-form-group--error' : ''">
                             <label class="govuk-label" for="amlRegistrationNumber">
-                                <span class="govuk-visually-hidden"
-                                      th:text="|#{newAgent.amlRegistrationNumber}|"></span>
+                                <span
+                                        th:text="|#{newAgent.amlRegistrationNumber}|"></span>
                             </label>
                             <span id="amlRegistrationNumber-error" class="govuk-error-message"
                                   th:if="${#fields.hasErrors('amlRegistrationNumber')}"
@@ -197,8 +90,8 @@
                         <div class="govuk-form-group" th:classappend="${#fields.hasErrors('responsiblePersonName')}
                         ? 'govuk-form-group--error' : ''">
                             <label class="govuk-label" for="responsiblePersonName">
-                                <span class="govuk-visually-hidden"
-                                      th:text="|#{newAgent.responsiblePersonName}|"></span>
+                                <span
+                                        th:text="|#{newAgent.responsiblePersonName}|"></span>
                             </label>
                             <span id="responsiblePersonName-error" class="govuk-error-message"
                                   th:if="${#fields.hasErrors('responsiblePersonName')}"
@@ -208,7 +101,103 @@
                                    name="responsiblePersonName" type="text" maxlength="50"
                                    th:field="*{responsiblePersonName}">
                         </div>
-
+                        <fieldset class="govuk-fieldset govuk-!-margin-top-9">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h3 class="govuk-fieldset__heading"
+                                    th:text="#{newAgent.address.title}"></h3>
+                            </legend>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.premise')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="premise">
+                                    <span th:text="|#{newAgent.address.premise}|"></span>
+                                </label>
+                                <span id="premise-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.premise')}"
+                                      th:each="e: ${#fields.errors('address.premise')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="premise"
+                                       name="premise" type="text" maxlength="50"
+                                       th:field="*{address.premise}">
+                            </div>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.addressLine1')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="line1">
+                                    <span th:text="|#{newAgent.address.line1}|"></span>
+                                </label>
+                                <span id="line1-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.addressLine1')}"
+                                      th:each="e: ${#fields.errors('address.addressLine1')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="line1"
+                                       name="line1" type="text" maxlength="50"
+                                       th:field="*{address.addressLine1}">
+                            </div>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.addressLine2')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="line2">
+                                    <span th:text="|#{newAgent.address.line2}|"></span>
+                                </label>
+                                <span id="line2-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.addressLine2')}"
+                                      th:each="e: ${#fields.errors('address.addressLine2')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="line2"
+                                       name="line2" type="text" maxlength="50"
+                                       th:field="*{address.addressLine2}">
+                            </div>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.town')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="town">
+                                    <span th:text="|#{newAgent.address.town}|"></span>
+                                </label>
+                                <span id="town-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.town')}"
+                                      th:each="e: ${#fields.errors('address.town')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="town"
+                                       name="town" type="text" maxlength="50"
+                                       th:field="*{address.town}">
+                            </div>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.county')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="county">
+                                    <span th:text="|#{newAgent.address.county}|"></span>
+                                </label>
+                                <span id="county-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.county')}"
+                                      th:each="e: ${#fields.errors('address.county')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="county"
+                                       name="county" type="text" maxlength="50"
+                                       th:field="*{address.county}">
+                            </div>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.country')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="country">
+                                    <span th:text="|#{newAgent.address.country}|"></span>
+                                </label>
+                                <span id="country-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.country')}"
+                                      th:each="e: ${#fields.errors('address.country')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="country"
+                                       name="country" type="text" maxlength="50"
+                                       th:field="*{address.country}">
+                            </div>
+                            <div class="govuk-form-group" th:classappend="${#fields.hasErrors('address.postcode')}
+                        ? 'govuk-form-group--error' : ''">
+                                <label class="govuk-label" for="postcode">
+                                    <span th:text="|#{newAgent.address.postcode}|"></span>
+                                </label>
+                                <span id="postcode-error" class="govuk-error-message"
+                                      th:if="${#fields.hasErrors('address.postcode')}"
+                                      th:each="e: ${#fields.errors('address.postcode')}"
+                                      th:text="${e}"></span>
+                                <input class="govuk-input" id="postcode"
+                                       name="postcode" type="text" maxlength="50"
+                                       th:field="*{address.postcode}">
+                            </div>
+                        </fieldset>
                     </fieldset>
                 </div>
                 <button data-prevent-double-click="true" id="submit-button" class="govuk-button"
