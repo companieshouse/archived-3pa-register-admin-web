@@ -9,6 +9,22 @@ clean:
 	rm -rf ./build-*
 	rm -rf ./build.log-*
 
+.PHONY: test-unit
+test-unit: coverage
+
+.PHONY: verify
+verify: coverage
+
+.PHONY: unit-coverage
+unit-coverage: clean
+	mvn versions:set -DnewVersion=$(version) -DgenerateBackupPoms=false jacoco:prepare-agent test jacoco:report
+
+.PHONY: coverage
+coverage: clean
+	mvn versions:set -DnewVersion=$(version) -DgenerateBackupPoms=false jacoco:prepare-agent test \
+	jacoco:prepare-agent-integration verify \
+	jacoco:report jacoco:report-integration
+
 .PHONY: package
 package:
 ifndef version
@@ -31,11 +47,7 @@ build:
 	cp ./target/$(artifact_name)-$(version).jar ./$(artifact_name).jar
 
 .PHONY: dist
-dist: clean build package coverage
-
-.PHONY: coverage
-coverage:
-	mvn verify
+dist: test-unit
 
 .PHONY: sonar
 sonar:
