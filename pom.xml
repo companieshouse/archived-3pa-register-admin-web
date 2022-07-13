@@ -14,7 +14,6 @@
 	<description>Registration of third party agents admin web app</description>
 	<properties>
         <junit-jupiter.version>5.8.2</junit-jupiter.version>
-        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
